@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_21_070139) do
+ActiveRecord::Schema.define(version: 2021_08_21_070946) do
+
+  create_table "doses", force: :cascade do |t|
+    t.float "amount"
+    t.integer "medicine_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["medicine_id"], name: "index_doses_on_medicine_id"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -62,4 +70,5 @@ ActiveRecord::Schema.define(version: 2021_08_21_070139) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "doses", "medicines"
 end
