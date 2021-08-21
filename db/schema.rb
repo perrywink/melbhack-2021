@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_21_065053) do
-
-  create_table "admr_logs", force: :cascade do |t|
-    t.datetime "time_admr"
-    t.integer "dose"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2021_08_21_070139) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
