@@ -61,3 +61,4 @@ gem 'name_of_person', '~> 1.1', '>= 1.1.1'
 
 # app specific gems
 gem "simple_calendar", "~> 2.4"
+gem 'sassc', '~> 2.1.0'
