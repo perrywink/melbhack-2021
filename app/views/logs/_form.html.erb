@@ -16,6 +16,15 @@
   <%= form.datetime_select :time_admr %>
 </div>
 
+<div class="field">
+  <%= form.fields_for :doses do |doses_form| %>
+  <%= doses_form.label :amount %>
+  <%= doses_form.number_field :amount%> mg
+
+  <%= doses_form.label :medicine_id %>
+  <%= doses_form.number_field :medicine_id %>
+  <% end %>
+</div>
 
 <div class="actions">
   <%= form.submit %>
