@@ -1,31 +1,21 @@
-<h1>Patients</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Ward number</th>
-      <th>Notes</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @patients.each do |patient| %>
-    <tr>
-      <td><%= patient.name %></td>
-      <td><%= patient.age %></td>
-      <td><%= patient.ward_number %></td>
-      <td><%= patient.notes %></td>
-      <td><%= link_to 'Show', patient %></td>
-      <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-      <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<br>
+<% @patients.each do |patient| %>
+<div class="flex items-center justify-end w-full">
+  <div class="container mx-auto p-9 bg-white max-w-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-250">
+    <img class="rounded-xl" src=<%=patient.image%> alt=image>
+    <div class="flex justify-between items-center">
+      <div>
+        <h1 class="mt-5 text-2xl font-semibold"><%=patient.name%></h1>
+        <p class="mt-2">Age: <%=patient.age%></p>
+      </div>
+      <div>
+        <button class="text-white text-md font-semibold bg-blue-300 py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 "><%= link_to 'Go to patient', patient %> </button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<% end %>
 <br>
 
 <%= link_to 'New Patient', new_patient_path %>

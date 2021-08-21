@@ -1,19 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @patient.name %>
-</p>
 
-<p>
-  <strong>Age:</strong>
-  <%= @patient.age %>
-</p>
+  <!-- Section Hero  -->
+  
+  <div class="container mx-auto md:grid grid-cols-3 justify-center md:py-20">
+    <div class="grid justify-center items-center order-1 col-span-1">
+      <img class="lg:h-80 md:h-64 h-40 rounded-full" src=<%=@patient.image%> alt=Image />
+      <button class="text-white text-md font-semibold bg-blue-300 py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-105"><%= link_to 'Administer Medicaitons', new_patient_log_path(@patient) %></button>
+    </div>
+    <div class="mt-8 md:mt-0 lg:justify-end col-span-2">
+      <h1 class="text-4xl text-gray-800 text-center md:text-left font-bold mb-6">Hi, I am <%=@patient.name%></h1>
+      <p class="text-xl text-gray-800 text-center md:text-left">Age: <%=@patient.age%></p>
+      <br>
+      <p class="text-xl text-gray-800 text-center md:text-left">Location: <%=@patient.ward_number%></p>
 
-<p>
-  <strong>Ward number:</strong>
-  <%= @patient.ward_number %>
-</p>
+
+      
+    </div>
+  </div>
+</header>
+
+
+
+</footer>
 
 <p>
   <strong>Notes:</strong>

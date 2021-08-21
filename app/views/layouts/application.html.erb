@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html class="antialiased">
+
   <%= render "shared/head" %>
+
 
   <body class="font-sans font-normal leading-normal text-gray-800 bg-white">
     <%= render "shared/flash_notice" %>
@@ -8,6 +10,11 @@
 
     <main class="px-4 lg:px-10">
       <%= content_for?(:content) ? yield(:content) : yield %>
+
     </main>
   </body>
+  <div class="absolute w-60 h-60 rounded-xl bg-blue-200 -top-5 -left-16 z-0 transform rotate-45 hidden md:block" style="z-index: -10"></div>
+  <div class="z-index 10000 absolute w-48 h-48 rounded-xl bg-blue-200 -bottom-6 -right-10 transform rotate-12 hidden md:block" style="z-index: -10"></div>
+  <div class="w-40 h-40 absolute bg-blue-200 rounded-full top-0 right-12 hidden md:block" style="z-index: -10"></div>
+  <div class="w-20 h-40 absolute bg-blue-200 rounded-full bottom-20 left-10 transform rotate-45 hidden md:block" style="z-index: -10"></div>
 </html>
