@@ -23,3 +23,12 @@
 <br>
 
 <%= link_to 'New Log', new_patient_log_path(@patient) %>
+<br><br>
+
+<div id="calendar" class="tab-panel active">
+  <h2>Log Calendar</h2>
+  <div id="log-calendar">
+    <%= render partial: "calendar", logs: @logs %>
+  </div>
+
+</div>

@@ -9,7 +9,7 @@ class LogsController < ApplicationController
 
   # GET /logs/1 or /logs/1.json
   def show
-    @doses = Dose.select {|d| d.log == @log}
+    @doses = @log.doses
   end
 
   # GET /logs/new

@@ -6,7 +6,7 @@ class PatientsController < ApplicationController
 
   # GET /patients or /patients.json
   def index
-    @patients = Patient.select {|p| p.user == current_user}
+    @patients = current_user.patients
   end
 
   # GET /patients/1 or /patients/1.json
