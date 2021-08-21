@@ -1,15 +1,15 @@
 <% content_for :devise_form do %>
-  <h2 class="pt-4 mb-8 text-4xl font-bold heading">Log in</h2>
+  <h2 class="text-4xl font-bold text-center text-indigo-600">Login</h2>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
     <div class="input-group">
       <%= f.label :email, class:"label" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent" %>
     </div>
 
     <div class="input-group">
       <%= f.label :password, class:"label" %>
-      <%= f.password_field :password, autocomplete: "current-password", class: "input" %>
+      <%= f.password_field :password, autocomplete: "current-password", class: "block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent" %>
     </div>
 
     <div class="mb-6 input-checkbox">
@@ -20,7 +20,7 @@
     </div>
 
     <div class="input-group">
-      <%= f.submit "Log in", class: "btn btn-default" %>
+      <%= f.submit "Log in", class: "px-6 py-2 ml-4 font-semibold cursor-pointer text-center focus:outline-none transition hover:shadow-lg shadow hover:bg-indigo-700 rounded-full text-white bg-indigo-600 " %>
     </div>
 
   <% end %>
