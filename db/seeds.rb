@@ -29,3 +29,5 @@ Medicine.create(generic_name:"Acetaminophen", brand_name:"Actamin")
 Medicine.create(generic_name:"Viagra", brand_name:"Revatio")
 Medicine.create(generic_name:"Fentanyl", brand_name:"Fentora")    
 
+
+

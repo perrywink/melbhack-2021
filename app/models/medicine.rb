@@ -1,3 +1,3 @@
 class Medicine < ApplicationRecord
-    has_one :dose
+    has_many :doses
 end
