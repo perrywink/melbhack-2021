@@ -5,11 +5,13 @@
 
   <% @medicines.each do |medicine| %>
 
-  <div class="flex bg-white rounded-full p-2 shadow m-3 w-1/2">
-    <span class="bg-blue-400 text-white rounded-full h-6 px-3 justify-center items-center">
-      <%= medicine.generic_name %>
-    </span>
-    <span class="px-2"><%= medicine.brand_name %></span>
+  <div class="flex justify-between bg-white rounded-full p-4 shadow m-2 ">
+    <div>
+      <span class="bg-blue-400 text-white rounded-full h-6 px-3 justify-center items-center">
+        <%= medicine.generic_name %>
+      </span>
+      <span class="px-2"><%= medicine.brand_name %></span>
+    </div>
 
     <% if current_user.admin %>
     <div>
