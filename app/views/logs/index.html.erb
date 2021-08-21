@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Time admr</th>
-      <th>Dose</th>
+
       <th>Patient</th>
       <th colspan="3"></th>
     </tr>
@@ -14,7 +14,6 @@
     <% @logs.each do |log| %>
     <tr>
       <td><%= log.time_admr %></td>
-      <td><%= log.dose %></td>
       <td><%= link_to log.patient.name, [@patient] %></td>
       <td><%= link_to 'Show', patient_log_path(@patient, log) %></td>
       <td><%= link_to 'Edit', edit_patient_log_path(@patient, log) %></td>

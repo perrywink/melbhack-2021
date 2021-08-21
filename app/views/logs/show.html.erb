@@ -3,10 +3,5 @@
   <%= @log.time_admr %>
 </p>
 
-<p>
-  <strong>Dose:</strong>
-  <%= @log.dose %>
-</p>
-
 <%= link_to 'Edit', edit_patient_log_path(@patient, @log) %> |
 <%= link_to 'See All Logs', patient_logs_path %>

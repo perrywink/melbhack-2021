@@ -69,6 +69,6 @@ class LogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def log_params
-      params.require(:log).permit(:time_admr, :dose)
+      params.require(:log).permit(:time_admr)
     end
 end
