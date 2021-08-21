@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_21_070946) do
+ActiveRecord::Schema.define(version: 2021_08_21_082741) do
 
   create_table "doses", force: :cascade do |t|
     t.float "amount"
     t.integer "medicine_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "log_id"
     t.index ["medicine_id"], name: "index_doses_on_medicine_id"
   end
 
