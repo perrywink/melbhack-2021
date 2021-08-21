@@ -1,6 +1,24 @@
 <p>
-  <strong>Time admr:</strong>
+  <strong>Administrator:</strong>
+  <%= current_user.email %>
+</p>
+
+<p>
+  <strong>Time administered:</strong>
   <%= @log.time_admr %>
+</p>
+
+<p>
+  <strong>Doses administered</strong> <br />
+  <% @doses.each do |d| %>
+<div>
+  <%= d.amount %> mg of
+  <%= d.medicine.generic_name %> (<%= d.medicine.brand_name %>)
+  <%= link_to 'Edit', edit_dose_path(d) %>
+  <%= link_to 'Destroy', d, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>
+<%= link_to 'New Dose', new_patient_log_dose_path(@patient, @log) %>
 </p>
 
 <%= link_to 'Edit', edit_patient_log_path(@patient, @log) %> |
