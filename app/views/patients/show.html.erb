@@ -20,5 +20,13 @@
   <%= @patient.notes %>
 </p>
 
+<strong>Logs</strong>
+<% for log in @patient.logs %>
+<ul>
+  <li><%= link_to log.time_admr, patient_log_path(@patient) %></li>
+</ul>
+<% end %>
+<%= link_to 'Add Log', new_patient_log_path(@patient) %> </br>
+
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
 <%= link_to 'Back', patients_path %>
