@@ -1,3 +1,9 @@
+<br>
+<br>
+
+<form class="p-14 bg-white max-w-sm mx-auto rounded-xl shadow-xl overflow-hidden p-6 space-y-10">
+            <h2 class="text-4xl font-bold text-center text-indigo-600">Add New Resident</h2>
+            <div>
 <%= form_with(model: patient) do |form| %>
   <% if patient.errors.any? %>
     <div id="error_explanation">
@@ -13,30 +19,30 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name , class: "block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
   </div>
 
   <div class="field">
     <%= form.label :age %>
-    <%= form.number_field :age %>
+    <%= form.number_field :age , class: "block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
   </div>
 
   <div class="field">
     <%= form.label :image %>
-    <%= form.text_field :image %>
+    <%= form.text_field :image , class: "block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
   </div>
 
   <div class="field">
     <%= form.label :ward_number %>
-    <%= form.text_field :ward_number %>
+    <%= form.text_field :ward_number , class: "block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
   </div>
 
   <div class="field">
     <%= form.label :notes %>
-    <%= form.text_area :notes %>
+    <%= form.text_area :notes, class: "block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div>
+    <%= form.submit class: "py-2 ml-4 font-semibold cursor-pointer text-center focus:outline-none transition hover:shadow-lg shadow hover:bg-indigo-700 rounded-full text-white bg-indigo-600", style: "width: 50%; margin-left:25%;marin-right:25%;"%>
   </div>
 <% end %>
