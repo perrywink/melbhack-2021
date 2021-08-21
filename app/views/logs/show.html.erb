@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Time admr:</strong>
+  <%= @log.time_admr %>
+</p>
+
+<p>
+  <strong>Dose:</strong>
+  <%= @log.dose %>
+</p>
+
+<%= link_to 'Edit', edit_log_path(@log) %> |
+<%= link_to 'Back', logs_path %>
