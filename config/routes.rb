@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   
   resources :medicines
   resources :patients do
-    resources :logs
+    resources :logs do
+      resources :doses, shallow: true
+    end
   end
-
 
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'

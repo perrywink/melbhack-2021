@@ -37,6 +37,7 @@ Medicine.create(generic_name:"Viagra", brand_name:"Revatio")
 Medicine.create(generic_name:"Fentanyl", brand_name:"Fentora")    
 
 log1.doses.create(amount:250, medicine_id:1)
+log1.doses.create(amount:300, medicine_id:2)
 log2.doses.create(amount:150, medicine_id:4)
 log3.doses.create(amount:200, medicine_id:3)
 

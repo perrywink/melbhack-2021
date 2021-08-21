@@ -9,6 +9,7 @@ class LogsController < ApplicationController
 
   # GET /logs/1 or /logs/1.json
   def show
+    @doses = Dose.select {|d| d.log == @log}
   end
 
   # GET /logs/new
@@ -26,7 +27,7 @@ class LogsController < ApplicationController
 
     respond_to do |format|
       if @log.save
-        format.html { redirect_to patient_logs_path(@patient), notice: "Log was successfully created." }
+        format.html { redirect_to patient_log_path(@patient, @log), notice: "Add in the dosages given!" }
         format.json { render :show, status: :created, location: @log }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -69,6 +70,6 @@ class LogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def log_params
-      params.require(:log).permit(:time_admr)
+      params.require(:log).permit(:time_admr, dose_attributes:[:amount,:medicine_id])
     end
 end
