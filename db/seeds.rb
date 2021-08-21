@@ -12,10 +12,10 @@ user2.save!
 
 admin = User.new
 admin.email = 'admin@example.com'
-user2.password = 'valid_password'
-user2.password_confirmation = 'valid_password'
-user2.admin = true;
-user2.save!
+admin.password = 'valid_password'
+admin.password_confirmation = 'valid_password'
+admin.admin = true;
+admin.save!
 
 p1 = user.patients.create(name:"Dan Melcher", age:20, ward_number:"2A",notes:"Sample Notes")
 p2 = user.patients.create(name:"Vicky Koo", age:60, ward_number:"2B",notes:"Decrease dosage overtime.")
