@@ -6,7 +6,11 @@ class PatientsController < ApplicationController
 
   # GET /patients or /patients.json
   def index
-    @patients = current_user.patients
+    if current_user.admin
+      @patients = Patient.all
+    else
+      @patients = current_user.patients
+    end
   end
 
   # GET /patients/1 or /patients/1.json
@@ -61,8 +65,10 @@ class PatientsController < ApplicationController
   end
 
   def correct_user
-    @patient = current_user.patients.find_by(id: params[:id])
-    redirect_to root_path, notice: "Don't peek on other people's data!" if @patient.nil?
+    unless current_user.admin
+      @patient = current_user.patients.find_by(id: params[:id])
+      redirect_to root_path, notice: "You're not authorized to see that!" if @patient.nil?
+    end
   end
 
   private

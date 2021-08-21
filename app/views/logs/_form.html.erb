@@ -1,4 +1,4 @@
-<%= form_with(model: [@patient, log], local: true) do |form| %>
+<%= form_with(model: [@patient, log], local: true, html: { class: "p-14 bg-white max-w-sm mx-auto rounded-xl shadow-xl overflow-hidden p-6 space-y-10" })  do |form|%>
 <% if log.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(log.errors.count, "error") %> prohibited this log from being saved:</h2>
@@ -12,11 +12,11 @@
 <% end %>
 
 <div class="field">
-  <%= form.label :time_admr %>
-  <%= form.datetime_select :time_admr %>
+  <%= form.label :time_admr, 'Time Administered' %> <br>
+  <%= form.datetime_select :time_admr, {}, {class: "border border-gray-300 rounded-full p-2 px-3 my-1"} %>
 </div>
 
 <div class="actions">
-  <%= form.submit %>
+  <%= form.submit 'Add Log', class: "btn btn-default" %>
 </div>
 <% end %>

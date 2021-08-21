@@ -2,47 +2,47 @@
 <br>
 
 <form class="p-14 bg-white max-w-sm mx-auto rounded-xl shadow-xl overflow-hidden p-6 space-y-10">
-            <h2 class="text-4xl font-bold text-center text-indigo-600">Add New Resident</h2>
-            <div>
-<%= form_with(model: patient) do |form| %>
-  <% if patient.errors.any? %>
+  <h2 class="text-4xl font-bold text-center text-blue-500">Add New Resident</h2>
+  <div>
+    <%= form_with(model: patient) do |form| %>
+    <% if patient.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
 
       <ul>
         <% patient.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name , class: "block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
-  </div>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name , class: "bg-gray-100 rounded-lg block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
+    </div>
 
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age , class: "block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
-  </div>
+    <div class="field">
+      <%= form.label :age %>
+      <%= form.number_field :age , class: "bg-gray-100 rounded-lg block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
+    </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image , class: "block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
-  </div>
+    <div class="field">
+      <%= form.label :image %>
+      <%= form.text_field :image , class: "bg-gray-100 rounded-lg block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
+    </div>
 
-  <div class="field">
-    <%= form.label :ward_number %>
-    <%= form.text_field :ward_number , class: "block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
-  </div>
+    <div class="field">
+      <%= form.label :ward_number %>
+      <%= form.text_field :ward_number , class: "bg-gray-100 rounded-lg block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
+    </div>
 
-  <div class="field">
-    <%= form.label :notes %>
-    <%= form.text_area :notes, class: "block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
-  </div>
+    <div class="field">
+      <%= form.label :notes %>
+      <%= form.text_area :notes, class: "bg-gray-100 rounded-lg block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent"%>
+    </div>
 
-  <div>
-    <%= form.submit class: "py-2 ml-4 font-semibold cursor-pointer text-center focus:outline-none transition hover:shadow-lg shadow hover:bg-indigo-700 rounded-full text-white bg-indigo-600", style: "width: 50%; margin-left:25%;marin-right:25%;"%>
-  </div>
-<% end %>
+    <div>
+      <%= form.submit class: "py-2 my-4 font-semibold cursor-pointer text-center focus:outline-none transition hover:shadow-lg shadow hover:bg-blue-600 rounded-full text-white bg-blue-500", style: "width: 50%; margin-left:25%;marin-right:25%;"%>
+    </div>
+    <% end %>

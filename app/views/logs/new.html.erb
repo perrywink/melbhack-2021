@@ -1,5 +1,7 @@
-<h1>New Log</h1>
+<div class="my-5 flex flex-col items-center">
+    <h2 class="text-4xl font-bold text-center text-blue-500 m-2">Make a Log</h2>
 
-<%= render 'form', log: @log %>
+    <%= render 'form', log: @log %>
 
-<%= link_to 'Back', patient_logs_path(@patient) %>
+    <%= link_to 'Back', patient_logs_path(@patient), class: "btn btn-default m-2" %>
+</div>
