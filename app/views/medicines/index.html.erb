@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Medicines</h1>
 
 <table>
@@ -13,13 +11,13 @@
 
   <tbody>
     <% @medicines.each do |medicine| %>
-      <tr>
-        <td><%= medicine.generic_name %></td>
-        <td><%= medicine.brand_name %></td>
-        <td><%= link_to 'Show', medicine %></td>
-        <td><%= link_to 'Edit', edit_medicine_path(medicine) %></td>
-        <td><%= link_to 'Destroy', medicine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= medicine.generic_name %></td>
+      <td><%= medicine.brand_name %></td>
+      <td><%= link_to 'Show', medicine %></td>
+      <td><%= link_to 'Edit', edit_medicine_path(medicine) %></td>
+      <td><%= link_to 'Destroy', medicine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
