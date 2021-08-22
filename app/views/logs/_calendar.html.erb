@@ -1,0 +1,8 @@
+<%= month_calendar events: @logs do |date, logs| %>
+<%= date %>
+<% logs.each do |log| %>
+<div>
+    <%= link_to readable_time(log.time_admr), patient_log_path(log.patient, log), class:"text-blue-500" %>
+</div>
+<% end %>
+<% end %>

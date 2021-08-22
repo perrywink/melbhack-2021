@@ -1,12 +1,17 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  resources :logs
+  
   resources :medicines
-  resources :patients
-    authenticate :user, lambda { |u| u.admin? } do
-      mount Sidekiq::Web => '/sidekiq'
+  resources :patients do
+    resources :logs do
+      resources :doses, shallow: true
     end
+  end
+
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
 
   devise_for :users

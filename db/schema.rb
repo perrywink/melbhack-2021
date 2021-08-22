@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_21_043638) do
+ActiveRecord::Schema.define(version: 2021_08_21_121932) do
 
-  create_table "admr_logs", force: :cascade do |t|
-    t.datetime "time_admr"
-    t.integer "dose"
+  create_table "doses", force: :cascade do |t|
+    t.float "amount"
+    t.integer "medicine_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "log_id"
+    t.index ["medicine_id"], name: "index_doses_on_medicine_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -32,9 +34,9 @@ ActiveRecord::Schema.define(version: 2021_08_21_043638) do
 
   create_table "logs", force: :cascade do |t|
     t.datetime "time_admr"
-    t.integer "dose"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "patient_id"
   end
 
   create_table "medicines", force: :cascade do |t|
@@ -51,6 +53,8 @@ ActiveRecord::Schema.define(version: 2021_08_21_043638) do
     t.text "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,4 +72,5 @@ ActiveRecord::Schema.define(version: 2021_08_21_043638) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "doses", "medicines"
 end

@@ -1,0 +1,10 @@
+<p>
+  <strong>Dose Amount </strong>
+  <%= @dose.amount %> mg
+</p>
+<p>
+  <strong>Medication </strong>
+  <%= @dose.medicine.generic_name%> (<%= @dose.medicine.brand_name%>)
+</p>
+
+<%= link_to 'Edit', edit_dose_path(@dose) %>

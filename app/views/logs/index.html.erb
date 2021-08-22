@@ -1,29 +1,25 @@
-<p id="notice"><%= notice %></p>
+<h2 class="pt-4 mb-8 text-4xl font-bold">Your Logs for <%= @patient.name %></h2>
 
-<h1>Logs</h1>
+<%= link_to '+ Add Log', new_patient_log_path(@patient), class: "m-2 p-4 font-semibold cursor-pointer text-center focus:outline-none transition hover:shadow-lg shadow hover:bg-blue-600 rounded-full text-white bg-blue-500" %>
+<br><br>
+<% @logs.each do |log| %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Time admr</th>
-      <th>Dose</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="flex justify-between p-4 bg-white rounded-full shadow-xl m-2 w-1/2">
+  <div><%= log.time_admr %></div>
+  <div>
+    <%= link_to 'Show', patient_log_path(@patient, log), class: "p-2 px-3 text-white bg-blue-500 rounded-full " %>
+    <%= link_to 'Edit', edit_patient_log_path(@patient, log), class: "p-2 px-3 text-white bg-yellow-500 rounded-full " %>
+    <%= link_to 'Delete', [@patient, log], method: :delete, data: { confirm: 'Are you sure?' }, class: "p-2 px-3 text-white bg-red-500 rounded-full " %>
+  </div>
+</div>
 
-  <tbody>
-    <% @logs.each do |log| %>
-      <tr>
-        <td><%= log.time_admr %></td>
-        <td><%= log.dose %></td>
-        <td><%= link_to 'Show', log %></td>
-        <td><%= link_to 'Edit', edit_log_path(log) %></td>
-        <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% end %>
 
-<br>
 
-<%= link_to 'New Log', new_log_path %>
+<div id="calendar" class="p-8 mt-6 bg-white rounded-sm shadow-xl">
+  <h2 class="pt-4 mb-2 text-2xl font-bold">Log Calendar</h2>
+  <div id="log-calendar">
+    <%= render partial: "calendar", logs: @logs%>
+  </div>
+
+</div>
