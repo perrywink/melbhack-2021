@@ -1,24 +1,6 @@
-# README
+# Finalist Team Submission for MelbHack 2021
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The devpost: https://devpost.com/software/archimedes-qyomfe?ref_content=my-projects-tab&ref_feature=my_projects
 
-Things you may want to cover:
+Patient management system for people working in disabled/old people care.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
